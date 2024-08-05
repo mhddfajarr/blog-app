@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index(){
         return view('posts', [
+        'title' => 'Blogs',
         'posts' => Post::all()]);
     }
 
@@ -22,5 +24,11 @@ class PostController extends Controller
         return view('post',[
             'post' => $post
         ]);
+    }
+
+    public function byAuthor(User $user){
+        return view('posts', [
+            'title' => 'Article by ' . $user->name,
+            'posts' => $user->Posts]);
     }
 }

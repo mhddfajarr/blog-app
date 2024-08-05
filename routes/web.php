@@ -14,15 +14,14 @@ Route::get('/', function () {
 Route::controller(PostController::class)->group(function () {
     Route::get('/posts', 'index');
     Route::get('/posts/{slug}', 'singlePost');
+    Route::get('/authors/{user}', 'byAuthor');
 });
 
 Route::get('/about', function () {
     return view('about');
 });
 
-// Route::get('/posts/{slug}', function($slug){
-    
-//     $post = Post::find($slug);
+// Route::get('/authors/{user}', function(User $user){
 
 //     return view('/post', ['post' => $post]);
 // });

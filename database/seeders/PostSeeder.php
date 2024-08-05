@@ -20,8 +20,8 @@ class PostSeeder extends Seeder
             'title' => 'Judul blog ke 1',
             'author' => 'Muhammad Fajar',
             'body' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus mollitia, ratione id eaque soluta dolore beatae sequi blanditiis autem ab, quo tenetur quae, expedita natus nulla amet? Quaerat, impedit quam!',
-            'updated_at' => '2024-05-21 01:58:37',
-            'created_at' => '2024-05-21 01:58:37'
+            'updated_at' => now(),
+            'created_at' => now()
         ],
         [   
             'id' => 2,
@@ -29,8 +29,8 @@ class PostSeeder extends Seeder
             'title' => 'Judul blog ke 2',
             'author' => 'Ridwan Sanusi  ',
             'body' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus mollitia, ratione id eaque soluta dolore beatae sequi blanditiis autem ab, quo tenetur quae, expedita natus nulla amet? Quaerat, impedit quam!',
-            'updated_at' => '2024-05-22 01:58:37',
-            'created_at' => '2024-05-22 01:58:37'
+            'updated_at' => now(),
+            'created_at' => now()
         ],
     ];
     DB::table('posts')->insert($post);
