@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,7 +28,13 @@ class PostController extends Controller
 
     public function byAuthor(User $user){
         return view('posts', [
-            'title' => 'Article by ' . $user->name,
+            'title' => count($user->posts) . ' Article by ' . $user->name,
             'posts' => $user->Posts]);
+    }
+
+    public function byCategory(Category $category){
+        return view('posts', [
+            'title' => 'Category ' . $category->name,
+            'posts' => $category->Posts]);
     }
 }

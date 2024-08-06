@@ -14,7 +14,8 @@ Route::get('/', function () {
 Route::controller(PostController::class)->group(function () {
     Route::get('/posts', 'index');
     Route::get('/posts/{slug}', 'singlePost');
-    Route::get('/authors/{user}', 'byAuthor');
+    Route::get('/authors/{user:username}', 'byAuthor');
+    Route::get('/categories/{category:slug}', 'byCategory');
 });
 
 Route::get('/about', function () {
